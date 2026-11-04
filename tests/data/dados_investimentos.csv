@@ -1,0 +1,4 @@
+asset_name,amount,purchase_price,days_invested,planned_days,status_esperado
+Poupança,1000.00,1.00,30,365,201
+CDB,5000.00,1.00,180,720,201
+CDB,-100.00,1.00,180,720,201
