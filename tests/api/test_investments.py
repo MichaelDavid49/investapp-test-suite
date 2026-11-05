@@ -1,4 +1,7 @@
+import csv
+from pathlib import Path
 
+import pytest
 import requests
 
 
@@ -13,7 +16,6 @@ def test_listar_investimentos(base_url, auth_headers):
     )
 
     print("Status HTTP:", response.status_code)
-    print("Resposta:", response.text)
 
     assert response.status_code == 200, (
         f"Erro ao listar investimentos: {response.text}"
@@ -29,6 +31,7 @@ def test_listar_investimentos(base_url, auth_headers):
         f"[TEST_INVESTMENTS] Sucesso! "
         f"{len(investimentos)} investimentos encontrados."
     )
+
 
 def test_excluir_investimento(base_url, auth_headers):
     """Valida a exclusão de um investimento."""
@@ -97,13 +100,8 @@ def test_excluir_investimento(base_url, auth_headers):
 
     print("[TEST_INVESTMENTS] Investimento excluído com sucesso!")
 
-"""Parte do integrante 7: criação de investimentos com dados de um CSV."""
 
-import csv
-from pathlib import Path
-
-import pytest
-import requests
+# Parte do integrante 7: criação de investimentos com dados de um CSV.
 
 
 def carregar_dados_investimentos_csv():
